@@ -19,13 +19,14 @@
               <Image
                      x:Name="Mario"
                      Source="mario_2d.png"
+                     Margin="30,0,0,0"
                      WidthRequest="60"
                      HeightRequest="90"
                      VerticalOptions="Center"
                      HorizontalOptions="Start"/>
        
               <Image
-                     x:Name="CanoDeCima"
+                     x:Name="CanoCima"
                      Source="cano_de_cima.png"
                      WidthRequest="60"
                      VerticalOptions="Start"
@@ -33,7 +34,7 @@
                      />
 
               <Image
-                     x:Name="CanoDeBaixo"
+                     x:Name="CanoBaixo"
                      Source="cano_de_baixo.png"
                      WidthRequest="60"
                      VerticalOptions="End"
@@ -45,14 +46,26 @@
                      Source="chao.png"
                      HeightRequest="200"
                      WidthRequest="900"
-                     VerticalOptions="End"
-                     HorizontalOptions="Fill"
+                     VerticalOptions="EndAndExpand"
+                     HorizontalOptions="FillAndExpand"
                      />              
               <Frame
-              Background="#77000000"
+              x:Name="FrameGameOver"
+              Background="#99000000"
               VerticalOptions="FillAndExpand"
-              HorizontalOptions="FillAndExpand"
-              >
+              HorizontalOptions="FillAndExpand">
+              <Frame.GestureRecognizers>
+                     <TapGestureRecognizer Tapped="OnGameOverClicked"/>
+              </Frame.GestureRecognizers>
+
+              <Image
+              x:Name="GameOver"
+              Source="start.png"
+              WidthRequest="350"
+              HeightRequest="350"
+              VerticalOptions="CenterAndExpand"
+              HorizontalOptions="CenterAndExpand"
+              Aspect="Fill"/>
 
 
 
