@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="flapmoney.MainPage"
              Shell.NavBarIsVisible="False">
-            
-             <Grid>
 
+       <Grid>
+
+              
 
               <Image
                      x:Name="FundoImg"
@@ -13,25 +14,23 @@
                      Opacity=".8"
                      Aspect="Fill"
                      VerticalOptions="FillAndExpand"
-                     HorizontalOptions="FillAndExpand"
-                    />
-              
+                     HorizontalOptions="FillAndExpand"/>
+
               <Image
                      x:Name="Mario"
                      Source="mario_2d.png"
                      Margin="30,0,0,0"
-                     WidthRequest="60"
-                     HeightRequest="90"
+                     WidthRequest="50"
+                     HeightRequest="50"
                      VerticalOptions="Center"
                      HorizontalOptions="Start"/>
-       
+
               <Image
                      x:Name="CanoCima"
                      Source="cano_de_cima.png"
                      WidthRequest="60"
                      VerticalOptions="Start"
-                     HorizontalOptions="End"
-                     />
+                     HorizontalOptions="End"/>
 
               <Image
                      x:Name="CanoBaixo"
@@ -39,33 +38,26 @@
                      WidthRequest="60"
                      VerticalOptions="End"
                      HorizontalOptions="End"
-                     />
+                     Margin="0,0,0,188"/>
 
-               <Image
-                     x:Name="chao"
-                     Source="chao.png"
-                     HeightRequest="200"
-                     WidthRequest="900"
-                     VerticalOptions="EndAndExpand"
-                     HorizontalOptions="FillAndExpand"
-                     />              
+
               <Frame
-              x:Name="FrameGameOver"
-              Background="#99000000"
-              VerticalOptions="FillAndExpand"
-              HorizontalOptions="FillAndExpand">
-              <Frame.GestureRecognizers>
-                     <TapGestureRecognizer Tapped="OnGameOverClicked"/>
-              </Frame.GestureRecognizers>
+                     x:Name="FrameGameOver"
+                     Background="#99000000"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand">
+                     <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnGameOverClicked"/>
+                     </Frame.GestureRecognizers>
 
-              <Image
-              x:Name="GameOver"
-              Source="start.png"
-              WidthRequest="350"
-              HeightRequest="350"
-              VerticalOptions="CenterAndExpand"
-              HorizontalOptions="CenterAndExpand"
-              Aspect="Fill"/>
+                     <Image
+                            x:Name="GameOver"
+                            Source="start.png"
+                            WidthRequest="350"
+                            HeightRequest="350"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="CenterAndExpand"
+                            Aspect="Fill"/>
 
 
 
@@ -73,11 +65,12 @@
 
               </Frame>
 
+              <Grid.GestureRecognizers>
+                     <TapGestureRecognizer Tapped="JumpMarinho"/>
+              </Grid.GestureRecognizers>
 
+       </Grid>
 
-
-
-            </Grid>
 
 
 </ContentPage>
