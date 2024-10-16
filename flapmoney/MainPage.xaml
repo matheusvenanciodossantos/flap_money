@@ -17,28 +17,32 @@
                      HorizontalOptions="FillAndExpand"/>
 
               <Image
-                     x:Name="Mario"
-                     Source="mario_2d.png"
+                     x:Name="Goku"
+                     Source="goku.png"
                      Margin="30,0,0,0"
-                     WidthRequest="50"
-                     HeightRequest="50"
+                     WidthRequest="80"
+                     HeightRequest="80"
                      VerticalOptions="Center"
                      HorizontalOptions="Start"/>
 
               <Image
                      x:Name="CanoCima"
                      Source="cano_de_cima.png"
+                     Aspect="AspectFit"
                      WidthRequest="60"
+                     HeightRequest="620"
                      VerticalOptions="Start"
                      HorizontalOptions="End"/>
 
               <Image
                      x:Name="CanoBaixo"
                      Source="cano_de_baixo.png"
+                     Aspect="AspectFit"
                      WidthRequest="60"
+                     HeightRequest="620"
                      VerticalOptions="End"
                      HorizontalOptions="End"
-                     Margin="0,0,0,188"/>
+                     />
 
 
               <Frame
@@ -66,7 +70,7 @@
               </Frame>
 
               <Grid.GestureRecognizers>
-                     <TapGestureRecognizer Tapped="JumpMarinho"/>
+                     <TapGestureRecognizer Tapped="JumpGokuzinho"/>
               </Grid.GestureRecognizers>
 
        </Grid>
