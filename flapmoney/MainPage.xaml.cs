@@ -6,17 +6,21 @@
 		const int fps = 25;
 		const int maxTempoPulando = 2;
 		const int ForcaPulo = 35;
-		const int AberturaDoCano = 5;
+		const int AberturaDoCano = ;
 		bool faliceu = true;
 		double LarguraJanela = 0;
 		double AlturaJanela = 0;
 		int xrl8 = 7;
 		int TempoPulando = 20;
+		int Score = 0;
 		bool EstaPulando = false;
+
 
 		public MainPage()
 		{
 			InitializeComponent();
+			CanoBaixo.TranslationX = -5000;
+			CanoCima.TranslationX = -5000;
 		}
 
 
@@ -42,6 +46,7 @@
 			FrameGameOver.IsVisible = false;
 			Inicializar();
 			Desenha();
+			LabelScore.IsVisible = true;
 		}
 
 		void Inicializar()
@@ -70,6 +75,10 @@
 				var minAltura=-CanoBaixo.HeightRequest;
 				CanoCima.TranslationY=Random.Shared.Next((int)minAltura, (int)maxAltura);
 				CanoBaixo.TranslationY=CanoCima.TranslationY+AberturaDoCano+CanoBaixo.HeightRequest;
+				Score ++;
+				LabelScore.Text="Canos:"+Score.ToString("D3");
+				FrameScore.Text="Score:"+Score.ToString("D3");
+				
 			}
 		}
 

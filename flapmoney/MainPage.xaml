@@ -6,8 +6,6 @@
 
        <Grid>
 
-              
-
               <Image
                      x:Name="FundoImg"
                      Source="background.png"
@@ -25,6 +23,8 @@
                      VerticalOptions="Center"
                      HorizontalOptions="Start"/>
 
+              
+
               <Image
                      x:Name="CanoCima"
                      Source="cano_de_cima.png"
@@ -34,6 +34,16 @@
                      VerticalOptions="Start"
                      HorizontalOptions="End"/>
 
+              <Label Text="Canos: 000"
+                     x:Name="LabelScore"
+                     FontFamily="mine"
+                     Margin="0,0,40,0"
+                     IsVisible="false"
+                     FontSize="60"
+                     TextColor="Yellow"
+                     VerticalOptions="StartAndExpand"
+                     HorizontalOptions="EndAndExpand"/>
+
               <Image
                      x:Name="CanoBaixo"
                      Source="cano_de_baixo.png"
@@ -41,8 +51,7 @@
                      WidthRequest="60"
                      HeightRequest="620"
                      VerticalOptions="End"
-                     HorizontalOptions="End"
-                     />
+                     HorizontalOptions="End"/>
 
 
               <Frame
@@ -50,10 +59,17 @@
                      Background="#99000000"
                      VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand">
-                     <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnGameOverClicked"/>
-                     </Frame.GestureRecognizers>
 
+                     <StackLayout>
+
+                      <Label Text="Score: 000"
+                            x:Name="FrameScore"
+                            FontFamily="mine"
+                            Margin="0,0,0,0"
+                            FontSize="60"
+                            TextColor="Yellow"
+                            VerticalOptions="Start"
+                            HorizontalOptions="Center"/>  
                      <Image
                             x:Name="GameOver"
                             Source="start.png"
@@ -63,10 +79,15 @@
                             HorizontalOptions="CenterAndExpand"
                             Aspect="Fill"/>
 
+                         
 
 
 
+                     <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnGameOverClicked"/>
+                     </Frame.GestureRecognizers>
 
+                     </StackLayout>
               </Frame>
 
               <Grid.GestureRecognizers>
