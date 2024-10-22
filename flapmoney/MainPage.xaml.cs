@@ -6,10 +6,10 @@
 		const int fps = 25;
 		const int maxTempoPulando = 2;
 		const int ForcaPulo = 35;
-		const int AberturaDoCano = ;
+		const int AberturaDoCano = 60;
 		bool faliceu = true;
-		double LarguraJanela = 0;
-		double AlturaJanela = 0;
+		double LarguraJanela = 10;
+		double AlturaJanela = 10;
 		int xrl8 = 7;
 		int TempoPulando = 20;
 		int Score = 0;
@@ -33,13 +33,13 @@
 				EstaPulando = false;
 				TempoPulando = 0;
 			}
-			
+
 
 		}
 		void JumpGokuzinho(object sender, TappedEventArgs e)
-			{
-				EstaPulando = true;
-			}
+		{
+			EstaPulando = true;
+		}
 		void OnGameOverClicked(object s, TappedEventArgs a)
 
 		{
@@ -51,6 +51,10 @@
 
 		void Inicializar()
 		{
+			CanoCima.TranslationX = -LarguraJanela;
+			CanoCima.TranslationY = -LarguraJanela;
+			Goku.TranslationX = 0;
+			Goku.TranslationY = 0;
 			faliceu = false;
 			Goku.TranslationY = 0;
 		}
@@ -71,14 +75,14 @@
 			{
 				CanoBaixo.TranslationX = 0;
 				CanoCima.TranslationX = 0;
-				var maxAltura=-100;
-				var minAltura=-CanoBaixo.HeightRequest;
-				CanoCima.TranslationY=Random.Shared.Next((int)minAltura, (int)maxAltura);
-				CanoBaixo.TranslationY=CanoCima.TranslationY+AberturaDoCano+CanoBaixo.HeightRequest;
-				Score ++;
-				LabelScore.Text="Canos:"+Score.ToString("D3");
-				FrameScore.Text="Score:"+Score.ToString("D3");
-				
+				var maxAltura = -100;
+				var minAltura = -CanoBaixo.HeightRequest;
+				CanoCima.TranslationY = Random.Shared.Next((int)minAltura, (int)maxAltura);
+				CanoBaixo.TranslationY = CanoCima.TranslationY + AberturaDoCano + CanoBaixo.HeightRequest;
+				Score++;
+				LabelScore.Text = "Canos:" + Score.ToString("D3");
+				FrameScore.Text = "Score:" + Score.ToString("D3");
+
 			}
 		}
 
@@ -114,6 +118,13 @@
 
 		}
 
+		//COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES
+
+		
+
+
+
+
 
 		bool VerificaColisaoCima()
 		{
@@ -138,18 +149,40 @@
 
 		bool VerificaColisaoCanoDeCima()
 		{
-			var minAltura = -LarguraJanela / 2;
-			if (Goku.TranslationY <= minAltura)
+			var PosHGoku = (LarguraJanela / 2) - (Goku.WidthRequest / 2);
+			var PosVGoku = (LarguraJanela / 2) - (Goku.HeightRequest / 2) + Goku.TranslationY;
+			if (PosHGoku >= Math.Abs(CanoCima.TranslationX) - CanoCima.WidthRequest &&
+				PosHGoku <= Math.Abs(CanoCima.TranslationX) + CanoCima.WidthRequest &&
+				PosVGoku <= CanoCima.TranslationY)
+			{
 				return true;
-
+			}
 			else
+			{
 				return false;
+			}
+		}
+
+		bool VerificaColisaoCanoDeBaixo()
+		{
+			var PosHGoku = (LarguraJanela / 2) - (Goku.WidthRequest / 2);
+			var PosVGoku = (LarguraJanela / 2) - (Goku.HeightRequest / 2) + Goku.TranslationY;
+			if (PosHGoku >= Math.Abs(CanoBaixo.TranslationX) - CanoBaixo.WidthRequest &&
+				PosHGoku <= Math.Abs(CanoBaixo.TranslationX) + CanoBaixo.WidthRequest &&
+				PosVGoku >= CanoBaixo.TranslationY)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 		bool VerificaColisao()
 		{
 			if (!faliceu)
 			{
-				if (VerificaColisaoCima() || VerificaColisaoBaxo())
+				if (VerificaColisaoCima() || VerificaColisaoBaxo() || VerificaColisaoCanoDeCima()||VerificaColisaoCanoDeBaixo())
 				{
 					return true;
 				}
@@ -157,6 +190,6 @@
 			return false;
 		}
 
-
+		//COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES
 	}
 }

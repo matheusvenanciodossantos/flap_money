@@ -17,11 +17,11 @@
               <Image
                      x:Name="Goku"
                      Source="goku.png"
-                     Margin="30,0,0,0"
+                     BackgroundColor="Black"
                      WidthRequest="80"
                      HeightRequest="80"
                      VerticalOptions="Center"
-                     HorizontalOptions="Start"/>
+                     HorizontalOptions="Center"/>
 
               
 
@@ -29,6 +29,7 @@
                      x:Name="CanoCima"
                      Source="cano_de_cima.png"
                      Aspect="AspectFit"
+                     BackgroundColor="Pink"
                      WidthRequest="60"
                      HeightRequest="620"
                      VerticalOptions="Start"
