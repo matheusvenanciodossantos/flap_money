@@ -6,7 +6,7 @@
 		const int fps = 25;
 		const int maxTempoPulando = 2;
 		const int ForcaPulo = 35;
-		const int AberturaDoCano = 60;
+		const int AberturaDoCano = 70;
 		bool faliceu = true;
 		double LarguraJanela = 10;
 		double AlturaJanela = 10;
@@ -113,9 +113,6 @@
 		{
 			Goku.TranslationY += gravidade;
 			//Goku.TranslationY -= gravidade;
-
-
-
 		}
 
 		//COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES_COLISÕES
