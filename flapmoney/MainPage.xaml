@@ -17,6 +17,7 @@
               <Image
                      x:Name="Goku"
                      Source="goku.png"
+                     BackgroundColor="Red"
                      WidthRequest="80"
                      HeightRequest="80"
                      VerticalOptions="Center"
@@ -28,6 +29,7 @@
                      x:Name="CanoCima"
                      Source="cano_de_cima.png"
                      Aspect="AspectFit"
+                     BackgroundColor="Red"
                      WidthRequest="60"
                      HeightRequest="620"
                      VerticalOptions="Start"
@@ -37,7 +39,7 @@
                      x:Name="LabelScore"
                      FontFamily="mine"
                      Margin="0,0,40,0"
-                     IsVisible="true"
+                     IsVisible="false"
                      FontSize="60"
                      TextColor="Yellow"
                      VerticalOptions="StartAndExpand"
@@ -46,6 +48,7 @@
               <Image
                      x:Name="CanoBaixo"
                      Source="cano_de_baixo.png"
+                     BackgroundColor="Red"
                      Aspect="AspectFit"
                      WidthRequest="60"
                      HeightRequest="620"

@@ -6,7 +6,7 @@
 		const int fps = 25;
 		const int maxTempoPulando = 2;
 		const int ForcaPulo = 35;
-		const int AberturaDoCano = 70;
+		const int AberturaDoCano = 260;
 		bool faliceu = true;
 		double LarguraJanela = 10;
 		double AlturaJanela = 10;
@@ -53,10 +53,15 @@
 		{
 			CanoCima.TranslationX = -LarguraJanela;
 			CanoCima.TranslationY = -LarguraJanela;
+			xrl8=7;
 			Goku.TranslationX = 0;
 			Goku.TranslationY = 0;
 			faliceu = false;
 			Goku.TranslationY = 0;
+			Score = 0;
+            LabelScore.Text = "Canos: " + Score.ToString("D3"); 
+            FrameScore.Text = "Score: " + Score.ToString("D3"); 
+		
 		}
 
 		protected override void OnSizeAllocated(double LJ, double AJ)
